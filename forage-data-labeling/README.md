@@ -1,241 +1,311 @@
-# AI Data Labeling and Quality Assurance Project
+# AI Data Annotation Workflow
 
-## Overview
-
-This project demonstrates foundational AI Operations, Data Quality, and Human-in-the-Loop AI skills through a simulated Data Labeling Analyst engagement. The objective was to prepare high-quality training data for machine learning systems by accurately classifying customer support messages, identifying sensitive information, and performing quality assurance reviews.
-
-The project was completed as part of the Forage Academy Data Labeling Job Simulation and focused on the processes used by AI training teams to create consistent, privacy-aware datasets for machine learning applications.
+A Python-based data annotation tool that simulates real-world AI training data workflows. This project allows users to classify customer support messages by intent, sentiment, and PII indicators, then export structured labeled data for machine learning and analytics use cases.
 
 ---
 
-## Business Problem
+## Project Overview
 
-Machine learning models depend on high-quality labeled datasets to learn patterns and make accurate predictions. Inconsistent annotations, poor quality control, and mishandling of personally identifiable information (PII) can negatively impact model performance and introduce compliance risks.
+This project began as a data labeling and quality assurance simulation focused on preparing training data for AI and machine learning systems.
 
-The goal of this project was to apply standardized annotation guidelines to ensure accurate classifications, maintain consistency across labels, and support responsible AI development through privacy-conscious data handling.
+The original simulation involved manually reviewing customer support messages and applying standardized labels for:
 
----
+- Intent Classification
+- Sentiment Analysis
+- Personally Identifiable Information (PII) Detection
+- Data Quality Review
 
-## Project Objectives
+After completing the simulation, I expanded the project by developing a Python-based annotation workflow to automate and standardize portions of the labeling process.
 
-* Classify customer support messages using a predefined annotation framework.
-* Identify customer intent using consistent decision rules.
-* Evaluate message sentiment.
-* Detect and flag personally identifiable information (PII).
-* Review annotation quality and resolve ambiguous edge cases.
-* Recommend improvements to annotation guidelines.
+The resulting application allows users to:
 
----
+- Load customer messages from a CSV file
+- Classify messages by intent
+- Label sentiment
+- Flag potential PII
+- Validate annotation inputs
+- Export structured training datasets
+- Generate annotation review summaries
 
-## Annotation Schema
-
-### Intent Classification
-
-Messages were categorized into one of four primary intents:
-
-| Intent    | Description                                                      |
-| --------- | ---------------------------------------------------------------- |
-| Billing   | Charges, refunds, invoices, subscriptions, payment methods       |
-| Technical | App errors, bugs, connectivity issues, login failures            |
-| Account   | Profile updates, account access, account status requests         |
-| Other     | General inquiries, shipping questions, or uncategorized requests |
-
-### Sentiment Analysis
-
-Messages were classified according to emotional tone:
-
-| Sentiment | Description                                   |
-| --------- | --------------------------------------------- |
-| Positive  | Satisfaction, gratitude, praise               |
-| Neutral   | Informational or emotionally neutral messages |
-| Negative  | Complaints, frustration, urgency              |
-
-### PII Detection
-
-Messages were reviewed for sensitive information including:
-
-* Email addresses
-* Phone numbers
-* Physical addresses
-* Customer identifiers
-* Financial information
-* Authentication credentials
-* Device identifiers linked to individuals
+This project demonstrates how a manual AI data labeling workflow can evolve into a repeatable software solution that supports data quality and AI training operations.
 
 ---
 
-## Project Tasks
+## Features
 
-### Data Annotation
+### Version 1.0
 
-Applied labeling guidelines to customer support messages by assigning:
+- Load customer messages from CSV
+- Capture intent classifications
+- Capture sentiment labels
+- Flag potential PII indicators
+- Export labeled data to CSV
 
-* Intent labels
-* Sentiment labels
-* PII flags
+### Version 1.1
 
-### Edge Case Evaluation
+- Input validation for annotation fields
+- Modular utility functions
+- Annotation review workflow
+- Summary reporting
+- Git version control improvements
+- Repository cleanup using `.gitignore`
 
-Reviewed ambiguous messages and documented rationale when classification decisions required additional interpretation.
+---
+## Project Evolution
 
-Examples included:
+### Phase 1: Data Labeling Simulation
 
-* Multiple intents within a single message
-* Mixed sentiment messages
-* Technical issues resulting in billing concerns
-* Account access versus technical login problems
+Completed a simulated AI Data Labeling and Quality Assurance project involving:
 
-### Quality Assurance Review
+- Intent classification
+- Sentiment analysis
+- PII identification
+- Quality assurance reviews
 
-Performed quality control activities by:
+### Phase 2: Python Workflow Development
 
-* Reviewing completed annotations
-* Identifying inconsistencies
-* Applying Keep / Fix / Flag review decisions
-* Validating adherence to labeling guidelines
-* Suggesting improvements to annotation procedures
+Designed and built a Python application that transforms the manual annotation process into a repeatable workflow.
 
-### Privacy Awareness
+Enhancements included:
 
-Applied responsible data handling practices by:
+- CSV-based data ingestion
+- Annotation capture
+- Input validation
+- Automated dataset generation
+- Annotation reporting
+- Version-controlled development using Git and GitHub
 
-* Flagging sensitive information
-* Avoiding reproduction of PII in reviewer notes
-* Escalating sensitive identifiers when required
-* Following privacy-focused annotation standards
+### Current Status
+
+Version 1.1
+
+Features:
+
+- Annotation workflow
+- Validation utilities
+- Review reporting
+- Structured CSV outputs
+- Git versioning
+
+### Next Phase
+
+Version 2.0 will focus on introducing automation features such as:
+
+- Automatic PII detection
+- Annotation confidence scoring
+- Reviewer workflows
+- Analytics and dashboard reporting
+---
+
+## Project Structure
+
+```text
+forage-data-labeling/
+│
+├── data/
+│   └── sample_messages.csv
+│
+├── outputs/
+│   └── labeled_data.csv
+│
+├── python_annotation_tool/
+│   ├── app.py
+│   ├── review.py
+│   ├── utils.py
+│   └── requirements.txt
+│
+├── docs/
+│   └── Version-1.1-Workflow.md
+│
+└── README.md
+```
 
 ---
 
-## Tools and Methods
+## Technologies Used
 
-### Annotation & Review
+- Python
+- Pandas
+- CSV Processing
+- Git
+- GitHub
+- VS Code
 
-* Data Annotation
-* Intent Classification
-* Sentiment Analysis
-* PII Detection
-* Human Review
+---
 
-### Quality Assurance
+## How It Works
 
-* Data Quality Validation
-* Keep / Fix / Flag Reviews
-* Edge Case Analysis
-* Guideline Adherence Checks
+### Step 1: Load Data
 
-### Responsible AI
+The application reads customer support messages from:
 
-* Privacy-Aware Labeling
-* Ethical Data Handling
-* Human-in-the-Loop AI
-* Data Governance Fundamentals
+```text
+sample_messages.csv
+```
+
+### Step 2: Annotate Messages
+
+For each message, the user provides:
+
+- Intent
+  - Billing
+  - Technical
+  - Account
+  - Other
+
+- Sentiment
+  - Positive
+  - Neutral
+  - Negative
+
+- PII Flag
+  - Yes
+  - No
+
+### Step 3: Validate Inputs
+
+The application validates entries before saving them to the dataset.
+
+### Step 4: Export Results
+
+Annotations are exported to:
+
+```text
+outputs/labeled_data.csv
+```
+
+### Step 5: Review Results
+
+Run the review workflow to generate annotation summaries and quality checks.
+
+---
+
+## Running the Application
+
+### Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### Run Annotation Workflow
+
+```bash
+python forage-data-labeling/python_annotation_tool/app.py
+```
+
+### Run Annotation Review
+
+```bash
+python forage-data-labeling/python_annotation_tool/review.py
+```
+
+---
+
+## Sample Output
+
+### Intent Summary
+
+```text
+billing     1
+technical   2
+account     2
+```
+
+### Sentiment Summary
+
+```text
+negative    3
+neutral     1
+positive    1
+```
+
+### PII Summary
+
+```text
+no     4
+yes    1
+```
 
 ---
 
 ## Skills Demonstrated
 
-* Analytical Thinking
-* Attention to Detail
-* Data Quality Assurance
-* Data Privacy Awareness
-* Documentation
-* Process Improvement
-* Human-AI Collaboration
-* Critical Decision-Making
-* Pattern Recognition
-* Responsible AI Practices
+### Python Development
+
+- Functions
+- Loops
+- Lists
+- Dictionaries
+- Imports
+
+### Data Processing
+
+- CSV ingestion
+- Data validation
+- Data transformation
+- Data export
+
+### Data Analysis
+
+- Pandas
+- DataFrames
+- Summary statistics
+
+### Software Development
+
+- Modular code design
+- Input validation
+- Reporting workflows
+- Version control
+
+### Git & GitHub
+
+- Repository management
+- Branch synchronization
+- Merge conflict resolution
+- Git tags
+- Repository maintenance
 
 ---
 
-## Key Takeaways
+## Version History
 
-This project strengthened my ability to:
+### Version 1.0
 
-* Apply structured classification frameworks consistently.
-* Interpret ambiguous customer messages using predefined rules.
-* Protect sensitive information during data processing activities.
-* Evaluate annotation quality through systematic review processes.
-* Support machine learning systems through accurate training data preparation.
-* Contribute to responsible AI development through privacy-aware workflows.
+- CSV message ingestion
+- Intent labeling
+- Sentiment labeling
+- PII detection
+- CSV export
 
----
+### Version 1.1
 
-## Future Enhancements
-
-To expand this project into a production-style AI Operations portfolio project, future enhancements will include:
-
-### Python-Based Annotation Workflow
-
-Develop an interactive annotation application using:
-
-* Python
-* Pandas
-* Streamlit
-
-Features:
-
-* Message labeling interface
-* Automated data validation
-* Annotation tracking
-* Dataset export functionality
-
-### Quality Metrics Dashboard
-
-Create analytics reporting using:
-
-* Power BI
-* Python
-* Pandas
-
-Metrics:
-
-* Intent distribution
-* Sentiment distribution
-* PII frequency
-* Reviewer agreement rates
-* Annotation accuracy trends
-
-### Annotation Governance Framework
-
-Explore advanced quality control techniques:
-
-* Inter-rater reliability analysis
-* Cohen's Kappa scoring
-* Annotation consistency monitoring
-* Guideline optimization reporting
+- Input validation
+- Annotation review workflow
+- Summary reporting
+- .gitignore implementation
+- Repository cleanup
 
 ---
 
-## Technologies
+## Future Enhancements (Version 2.0)
 
-* Python (Planned Enhancement)
-* Pandas (Planned Enhancement)
-* Streamlit (Planned Enhancement)
-* Power BI (Planned Enhancement)
-* CSV Data Processing
-* Data Annotation Frameworks
+Planned improvements include:
+
+- Confidence scores
+- Reviewer comments
+- Annotation timestamps
+- Dashboard reporting
+- Multi-label classification
+- Analytics visualizations
+- Quality scoring metrics
 
 ---
-```
-## Python Annotation Workflow Enhancement
 
-To extend the original simulation, I developed a Python-based annotation workflow that allows users to:
-
-- Classify customer messages by intent
-- Assign sentiment labels
-- Flag PII
-- Export labeled datasets
-- Perform quality assurance reviews
-
-This enhancement demonstrates how manual labeling processes can be translated into repeatable data operations workflows.
-```
----
 ## Author
 
 **LaQuita Jordan**
+Data Analytics Graduate Student | AI & Data Projects Portfolio
 
-Data Analytics Graduate Student | AI Operations Enthusiast | Data Quality & Process Improvement
-
-Focused on data analytics, AI training workflows, data governance, and operational excellence through structured data management and quality assurance practices.
-
-
+GitHub Repository: job-simulations
