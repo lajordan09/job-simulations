@@ -1,0 +1,6 @@
+id,message,intent,sentiment,pii_flag
+1,My card was charged twice. Please refund me.,billing,negative,no
+2,The app crashes whenever I try to log in.,technical,negative,no
+3,Please update my email to john@email.com.,account,neutral,yes
+4,Thank you for fixing the issue.,technical,positive,no
+5,I can't access my account.,account,negative,no
