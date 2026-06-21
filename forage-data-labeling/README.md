@@ -322,9 +322,9 @@ Potential future improvements include:
 ---
 
 ## Author
-
+```
 **LaQuita Jordan**
----
 Data Analytics Graduate Student | AI, Python, & Data Projects Portfolio
 
 GitHub Repository: job-simulations
+```
