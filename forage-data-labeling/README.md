@@ -2,15 +2,9 @@
 
 ## Overview
 
-This project began as a simple data-labeling simulation and evolved into a Python-based AI Data Annotation Tool.
+This project began as a customer-support data labeling simulation and evolved into a Python-based AI Data Annotation Tool. The application allows human reviewers to classify customer messages by intent, sentiment, and PII indicators while applying validation and quality-review workflows.
 
-The application allows a human annotator to review customer support messages and assign structured labels including:
-
-- Intent Classification
-- Sentiment Analysis
-- PII Detection
-
-The labeled data is exported to CSV format and can be used as training data for machine learning and natural language processing (NLP) workflows.
+The resulting structured dataset can be used for AI training, analytics, and human-in-the-loop machine learning processes.
 
 This project demonstrates practical experience with:
 
@@ -19,25 +13,27 @@ This project demonstrates practical experience with:
 - Data Annotation
 - Data Validation
 - CSV Processing
-- Data Quality Review Workflows
+- Data Quality Review
+- Human-in-the-Loop AI Workflows
 
 ---
 
 ## Business Problem
 
-Organizations rely on high-quality labeled data to train AI and machine learning models. However, raw customer support messages are unstructured, inconsistent, and may contain sensitive information.
+Organizations rely on high-quality labeled data to train AI and machine learning models. Raw customer support messages are often unstructured, inconsistent, and may contain sensitive information.
 
 This project addresses the challenge of transforming unstructured customer communications into structured, machine-learning-ready datasets by:
 
 - Classifying customer requests by intent
 - Identifying customer sentiment
 - Detecting personally identifiable information (PII)
-- Applying quality assurance standards to improve annotation consistency
+- Applying quality assurance standards
+- Improving annotation consistency
 
-The resulting labeled data can be used to train customer support AI systems, improve operational reporting, and support responsible AI development.
-This project simulates the work performed by AI Trainers, Data Annotators, and Human-in-the-Loop reviewers who create high-quality training datasets.
+The resulting labeled data can support AI model training, customer support automation, operational reporting, and responsible AI development.
 
 ---
+
 ## Solution
 
 To address this challenge, I developed a Python-based annotation workflow that converts unstructured customer support messages into structured datasets suitable for AI training and analysis.
@@ -48,32 +44,22 @@ The workflow:
 2. Presents messages for annotation
 3. Allows classification of Intent, Sentiment, and PII
 4. Applies standardized labeling guidelines
-5. Exports annotations into a structured dataset
-6. Supports downstream quality assurance review processes
+5. Validates user inputs
+6. Exports annotations into a structured dataset
+7. Supports downstream quality assurance review processes
 
-The workflow helps ensure consistency, privacy awareness, and data quality throughout the annotation process.
+### Run Annotation Tool
 
----
+```bash
+python forage-data-labeling/python_annotation_tool/app.py
+```
 
-## Annotation Schema
+### Run Review Tool
 
-### Intent Categories
+```bash
+python forage-data-labeling/python_annotation_tool/review.py
+```
 
-- Billing
-- Technical
-- Account
-- Other
-
-### Sentiment Categories
-
-- Positive
-- Neutral
-- Negative
-
-### PII Categories
-
-- Yes
-- No
 ---
 
 ## Project Structure
@@ -101,34 +87,33 @@ forage-data-labeling/
 
 ---
 
-### Annotation Workflow
+## Annotation Schema
 
-The application loads customer messages from a CSV file and prompts the user to label:
+### Intent Categories
 
-- Intent
-  - Billing
-  - Technical
-  - Account
-  - Other
+| Intent | Description |
+|----------|-------------|
+| Billing | Charges, refunds, invoices, subscriptions |
+| Technical | App errors, bugs, login failures |
+| Account | Profile updates, account access requests |
+| Other | General inquiries |
 
-- Sentiment
-  - Positive
-  - Neutral
-  - Negative
+### Sentiment Categories
 
-- PII Detection
-  - Yes
-  - No
+- Positive
+- Neutral
+- Negative
 
-The completed annotations are exported to:
+### PII Categories
 
-```text
-outputs/labeled_data.csv
-```
+- Yes
+- No
 
 ---
 
-### Validation Layer (Version 1.1)
+## Version 1.1 Enhancements
+
+### Validation Layer
 
 Validation functions were added to improve data quality.
 
@@ -138,13 +123,9 @@ The system validates:
 - Sentiment values
 - PII values
 
-Invalid entries are automatically replaced with default values.
+Invalid entries are automatically replaced with default values, simulating quality controls commonly used in AI training pipelines.
 
-This simulates real-world annotation quality controls used in AI training pipelines.
-
----
-
-### Review Workflow (Version 1.1)
+### Review Workflow
 
 A review utility was added to generate annotation summaries.
 
@@ -154,50 +135,15 @@ The review process calculates:
 - Sentiment counts
 - PII counts
 
-This allows a reviewer to quickly assess the quality and distribution of labels within the dataset.
+This allows reviewers to quickly assess label distribution and annotation quality.
 
 ---
 
-## Example Workflow
+## Screenshot
 
-### Run Annotation Tool
+### Annotation and Review Workflow
 
-```bash
-python forage-data-labeling/python_annotation_tool/app.py
-```
-
-### Run Review Tool
-
-```bash
-python forage-data-labeling/python_annotation_tool/review.py
-```
-
----
-## Workflow Process
-
-### Step 1: Data Ingestion
-
-Customer support messages are loaded from a CSV file.
-
-### Step 2: Annotation
-
-Each message is reviewed and assigned:
-
-- Intent
-- Sentiment
-- PII Flag
-
-### Step 3: Validation
-
-Annotations are checked against predefined labeling guidelines to promote consistency.
-
-### Step 4: Export
-
-Completed annotations are exported to a structured CSV dataset for downstream use.
-
-### Step 5: Quality Review
-
-Annotations can be reviewed using a Keep / Fix / Flag process to identify inconsistencies and improve overall dataset quality.
+![Annotation Workflow](screenshots/v1-1-annotation-workflow.png)
 
 ---
 
@@ -246,14 +192,6 @@ This project demonstrates how structured annotation workflows improve data quali
 
 ---
 
-## Screenshot
-
-### Annotation and Review Workflow
-
-![Annotation Workflow](screenshots/v1-1-annotation-workflow.png)
-
----
-
 ## Sample Output
 
 ```text
@@ -279,14 +217,28 @@ yes          1
 
 ## Skills Demonstrated
 
-- Python Programming
+### AI Operations
+
+- Human-in-the-Loop AI
 - Data Annotation
+- Dataset Preparation
+- Quality Assurance
+
+### Data Quality
+
 - Data Validation
-- Data Quality Review
-- CSV Processing
+- Process Standardization
+- Error Reduction
+- Consistency Reviews
+
+### Technical Skills
+
+- Python
 - Pandas
-- Human-in-the-Loop AI Workflows
-- Natural Language Processing (NLP) Foundations
+- CSV Processing
+- Git
+- GitHub
+- Command-Line Applications
 
 ---
 
@@ -310,7 +262,7 @@ yes          1
 
 ## Future Enhancements
 
-Potential future improvements include:
+Planned improvements include:
 
 - Confidence scoring
 - Multiple annotator support
@@ -324,7 +276,7 @@ Potential future improvements include:
 ## Author
 ```
 **LaQuita Jordan**
-Data Analytics Graduate Student | AI, Python, & Data Projects Portfolio
 
-GitHub Repository: job-simulations
+Data Analytics Graduate Student | AI, Python, & Data Projects Portfolio
 ```
+GitHub Repository: https://github.com/lajordan09/job-simulations
