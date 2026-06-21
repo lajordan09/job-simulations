@@ -23,18 +23,57 @@ This project demonstrates practical experience with:
 
 ---
 
-## Business Scenario
+## Business Problem
 
-Organizations often need labeled datasets before training AI or machine learning models.
+Organizations rely on high-quality labeled data to train AI and machine learning models. However, raw customer support messages are unstructured, inconsistent, and may contain sensitive information.
 
-Raw customer messages must be reviewed and tagged with categories such as:
+This project addresses the challenge of transforming unstructured customer communications into structured, machine-learning-ready datasets by:
 
-- Customer intent
-- Sentiment
-- Personally Identifiable Information (PII)
+- Classifying customer requests by intent
+- Identifying customer sentiment
+- Detecting personally identifiable information (PII)
+- Applying quality assurance standards to improve annotation consistency
 
+The resulting labeled data can be used to train customer support AI systems, improve operational reporting, and support responsible AI development.
 This project simulates the work performed by AI Trainers, Data Annotators, and Human-in-the-Loop reviewers who create high-quality training datasets.
 
+---
+## Solution
+
+To address this challenge, I developed a Python-based annotation workflow that converts unstructured customer support messages into structured datasets suitable for AI training and analysis.
+
+The workflow:
+
+1. Loads customer support messages from a CSV dataset
+2. Presents messages for annotation
+3. Allows classification of Intent, Sentiment, and PII
+4. Applies standardized labeling guidelines
+5. Exports annotations into a structured dataset
+6. Supports downstream quality assurance review processes
+
+The workflow helps ensure consistency, privacy awareness, and data quality throughout the annotation process.
+
+---
+
+## Annotation Schema
+
+### Intent Categories
+
+- Billing
+- Technical
+- Account
+- Other
+
+### Sentiment Categories
+
+- Positive
+- Neutral
+- Negative
+
+### PII Categories
+
+- Yes
+- No
 ---
 
 ## Project Structure
@@ -61,8 +100,6 @@ forage-data-labeling/
 ```
 
 ---
-
-## Features
 
 ### Annotation Workflow
 
@@ -134,6 +171,78 @@ python forage-data-labeling/python_annotation_tool/app.py
 ```bash
 python forage-data-labeling/python_annotation_tool/review.py
 ```
+
+---
+## Workflow Process
+
+### Step 1: Data Ingestion
+
+Customer support messages are loaded from a CSV file.
+
+### Step 2: Annotation
+
+Each message is reviewed and assigned:
+
+- Intent
+- Sentiment
+- PII Flag
+
+### Step 3: Validation
+
+Annotations are checked against predefined labeling guidelines to promote consistency.
+
+### Step 4: Export
+
+Completed annotations are exported to a structured CSV dataset for downstream use.
+
+### Step 5: Quality Review
+
+Annotations can be reviewed using a Keep / Fix / Flag process to identify inconsistencies and improve overall dataset quality.
+
+---
+
+## Example Input
+
+```csv
+id,message
+1,"My card was charged twice."
+2,"Please change my email to john@email.com"
+3,"The app keeps crashing."
+4,"Thank you, that fixed it!"
+```
+
+---
+
+## Example Output
+
+```csv
+id,intent,sentiment,pii_flag
+1,Billing,Negative,No
+2,Account,Neutral,Yes
+3,Technical,Negative,No
+4,Other,Positive,No
+```
+
+---
+
+## Results
+
+Successfully transformed raw customer support messages into structured datasets containing:
+
+- Intent labels
+- Sentiment labels
+- PII indicators
+
+The resulting data can be used for:
+
+- AI model training
+- Customer support automation
+- Sentiment analysis
+- Operational reporting
+- Data quality monitoring
+- Human-in-the-loop AI workflows
+
+This project demonstrates how structured annotation workflows improve data quality and create reliable datasets for machine learning applications.
 
 ---
 
