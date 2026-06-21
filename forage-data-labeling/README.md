@@ -1,100 +1,40 @@
-# AI Data Annotation Workflow
+# AI Data Annotation Tool
 
-A Python-based data annotation tool that simulates real-world AI training data workflows. This project allows users to classify customer support messages by intent, sentiment, and PII indicators, then export structured labeled data for machine learning and analytics use cases.
+## Overview
 
----
+This project began as a simple data-labeling simulation and evolved into a Python-based AI Data Annotation Tool.
 
-## Project Overview
-
-This project began as a data labeling and quality assurance simulation focused on preparing training data for AI and machine learning systems.
-
-The original simulation involved manually reviewing customer support messages and applying standardized labels for:
+The application allows a human annotator to review customer support messages and assign structured labels including:
 
 - Intent Classification
 - Sentiment Analysis
-- Personally Identifiable Information (PII) Detection
-- Data Quality Review
+- PII Detection
 
-After completing the simulation, I expanded the project by developing a Python-based annotation workflow to automate and standardize portions of the labeling process.
+The labeled data is exported to CSV format and can be used as training data for machine learning and natural language processing (NLP) workflows.
 
-The resulting application allows users to:
+This project demonstrates practical experience with:
 
-- Load customer messages from a CSV file
-- Classify messages by intent
-- Label sentiment
-- Flag potential PII
-- Validate annotation inputs
-- Export structured training datasets
-- Generate annotation review summaries
-
-This project demonstrates how a manual AI data labeling workflow can evolve into a repeatable software solution that supports data quality and AI training operations.
+- Python
+- Pandas
+- Data Annotation
+- Data Validation
+- CSV Processing
+- Data Quality Review Workflows
 
 ---
 
-## Features
+## Business Scenario
 
-### Version 1.0
+Organizations often need labeled datasets before training AI or machine learning models.
 
-- Load customer messages from CSV
-- Capture intent classifications
-- Capture sentiment labels
-- Flag potential PII indicators
-- Export labeled data to CSV
+Raw customer messages must be reviewed and tagged with categories such as:
 
-### Version 1.1
+- Customer intent
+- Sentiment
+- Personally Identifiable Information (PII)
 
-- Input validation for annotation fields
-- Modular utility functions
-- Annotation review workflow
-- Summary reporting
-- Git version control improvements
-- Repository cleanup using `.gitignore`
+This project simulates the work performed by AI Trainers, Data Annotators, and Human-in-the-Loop reviewers who create high-quality training datasets.
 
----
-## Project Evolution
-
-### Phase 1: Data Labeling Simulation
-
-Completed a simulated AI Data Labeling and Quality Assurance project involving:
-
-- Intent classification
-- Sentiment analysis
-- PII identification
-- Quality assurance reviews
-
-### Phase 2: Python Workflow Development
-
-Designed and built a Python application that transforms the manual annotation process into a repeatable workflow.
-
-Enhancements included:
-
-- CSV-based data ingestion
-- Annotation capture
-- Input validation
-- Automated dataset generation
-- Annotation reporting
-- Version-controlled development using Git and GitHub
-
-### Current Status
-
-Version 1.1
-
-Features:
-
-- Annotation workflow
-- Validation utilities
-- Review reporting
-- Structured CSV outputs
-- Git versioning
-
-### Next Phase
-
-Version 2.0 will focus on introducing automation features such as:
-
-- Automatic PII detection
-- Annotation confidence scoring
-- Reviewer workflows
-- Analytics and dashboard reporting
 ---
 
 ## Project Structure
@@ -114,38 +54,19 @@ forage-data-labeling/
 │   ├── utils.py
 │   └── requirements.txt
 │
-├── docs/
-│   └── Version-1.1-Workflow.md
+├── screenshots/
+│   └── v1-1-annotation-workflow.png
 │
 └── README.md
 ```
 
 ---
 
-## Technologies Used
+## Features
 
-- Python
-- Pandas
-- CSV Processing
-- Git
-- GitHub
-- VS Code
+### Annotation Workflow
 
----
-
-## How It Works
-
-### Step 1: Load Data
-
-The application reads customer support messages from:
-
-```text
-sample_messages.csv
-```
-
-### Step 2: Annotate Messages
-
-For each message, the user provides:
+The application loads customer messages from a CSV file and prompts the user to label:
 
 - Intent
   - Billing
@@ -158,43 +79,57 @@ For each message, the user provides:
   - Neutral
   - Negative
 
-- PII Flag
+- PII Detection
   - Yes
   - No
 
-### Step 3: Validate Inputs
-
-The application validates entries before saving them to the dataset.
-
-### Step 4: Export Results
-
-Annotations are exported to:
+The completed annotations are exported to:
 
 ```text
 outputs/labeled_data.csv
 ```
 
-### Step 5: Review Results
+---
 
-Run the review workflow to generate annotation summaries and quality checks.
+### Validation Layer (Version 1.1)
+
+Validation functions were added to improve data quality.
+
+The system validates:
+
+- Intent values
+- Sentiment values
+- PII values
+
+Invalid entries are automatically replaced with default values.
+
+This simulates real-world annotation quality controls used in AI training pipelines.
 
 ---
 
-## Running the Application
+### Review Workflow (Version 1.1)
 
-### Install Dependencies
+A review utility was added to generate annotation summaries.
 
-```bash
-pip install -r requirements.txt
-```
+The review process calculates:
 
-### Run Annotation Workflow
+- Intent counts
+- Sentiment counts
+- PII counts
+
+This allows a reviewer to quickly assess the quality and distribution of labels within the dataset.
+
+---
+
+## Example Workflow
+
+### Run Annotation Tool
 
 ```bash
 python forage-data-labeling/python_annotation_tool/app.py
 ```
 
-### Run Annotation Review
+### Run Review Tool
 
 ```bash
 python forage-data-labeling/python_annotation_tool/review.py
@@ -202,70 +137,47 @@ python forage-data-labeling/python_annotation_tool/review.py
 
 ---
 
+## Screenshot
+
+### Annotation and Review Workflow
+
+![Annotation Workflow](screenshots/v1-1-annotation-workflow.png)
+
+---
+
 ## Sample Output
 
-### Intent Summary
-
 ```text
-billing     1
-technical   2
-account     2
-```
+Intent Counts
 
-### Sentiment Summary
+technical    2
+account      2
+billing      1
 
-```text
-negative    3
-neutral     1
-positive    1
-```
+Sentiment Counts
 
-### PII Summary
+negative     3
+neutral      1
+positive     1
 
-```text
-no     4
-yes    1
+PII Counts
+
+no           4
+yes          1
 ```
 
 ---
 
 ## Skills Demonstrated
 
-### Python Development
-
-- Functions
-- Loops
-- Lists
-- Dictionaries
-- Imports
-
-### Data Processing
-
-- CSV ingestion
-- Data validation
-- Data transformation
-- Data export
-
-### Data Analysis
-
+- Python Programming
+- Data Annotation
+- Data Validation
+- Data Quality Review
+- CSV Processing
 - Pandas
-- DataFrames
-- Summary statistics
-
-### Software Development
-
-- Modular code design
-- Input validation
-- Reporting workflows
-- Version control
-
-### Git & GitHub
-
-- Repository management
-- Branch synchronization
-- Merge conflict resolution
-- Git tags
-- Repository maintenance
+- Human-in-the-Loop AI Workflows
+- Natural Language Processing (NLP) Foundations
 
 ---
 
@@ -273,39 +185,36 @@ yes    1
 
 ### Version 1.0
 
-- CSV message ingestion
-- Intent labeling
-- Sentiment labeling
-- PII detection
-- CSV export
+- Built annotation workflow
+- Loaded messages from CSV
+- Captured intent, sentiment, and PII labels
+- Exported labeled dataset to CSV
 
 ### Version 1.1
 
-- Input validation
-- Annotation review workflow
-- Summary reporting
-- .gitignore implementation
-- Repository cleanup
+- Added validation functions
+- Added review workflow
+- Added annotation summary reporting
+- Improved data quality controls
 
 ---
 
-## Future Enhancements (Version 2.0)
+## Future Enhancements
 
-Planned improvements include:
+Potential future improvements include:
 
-- Confidence scores
-- Reviewer comments
-- Annotation timestamps
-- Dashboard reporting
-- Multi-label classification
-- Analytics visualizations
-- Quality scoring metrics
+- Confidence scoring
+- Multiple annotator support
+- Label agreement analysis
+- Dashboard reporting with Power BI
+- Machine learning model integration
+- Web-based annotation interface
 
 ---
 
 ## Author
 
 **LaQuita Jordan**
-Data Analytics Graduate Student | AI & Data Projects Portfolio
+Data Analytics Graduate Student | AI, Python, & Data Projects Portfolio
 
 GitHub Repository: job-simulations
