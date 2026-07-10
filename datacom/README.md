@@ -17,5 +17,10 @@ This project simulates the implementation phase of a strategic IT infrastructure
 2. View the workflow logic in `.github/workflows/main.yml`.
 
 ---
-*LaQuita Jordan*
-*Developed as part of the Datacom Job Simulation.*
+
+## Author
+**LaQuita Jordan**  
+Data Analytics Graduate Student  
+*AI, Cloud & Systems Infrastructure Engineer*
+
+*Developed as part of the DATACOM Job Simulation.*
