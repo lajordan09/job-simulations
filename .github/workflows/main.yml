@@ -1,4 +1,4 @@
-name: Datacom CI Pipeline
+name: GitHub Actions Demo
 
 on:
   push:
