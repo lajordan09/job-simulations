@@ -1,0 +1,14 @@
+name: Datacom CI Pipeline
+
+on:
+  push:
+    paths:
+      - 'datacom/**' # Only triggers when files inside the datacom folder change
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run Datacom Simulation
+        run: echo "Datacom project update detected. Pipeline initiated."
