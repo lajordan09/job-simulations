@@ -37,6 +37,8 @@ This repository serves as a professional simulation of an enterprise cloud migra
 ![Asana Progress](asana-task-completion.png)
 
 ---
+<!-- test trigger -->
+---
 
 ## Author
 **LaQuita Jordan**  
