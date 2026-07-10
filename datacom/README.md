@@ -28,6 +28,8 @@ This repository serves as a professional simulation of an enterprise cloud migra
 ## Simulation Deliverables
 *This section provides evidence of project management and team communication throughout the migration simulation.*
 
+<!-- test trigger -->
+
 ### Communication Log
 *Simulated status update posted to the team's Slack channel.*
 ![Team Communication](wcd-bank-team-communication.png)
@@ -36,8 +38,6 @@ This repository serves as a professional simulation of an enterprise cloud migra
 *Workflow lifecycle tracked using Asana Kanban methodology.*
 ![Asana Progress](asana-task-completion.png)
 
----
-<!-- test trigger -->
 ---
 
 ## Author
