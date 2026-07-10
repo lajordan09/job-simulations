@@ -30,6 +30,10 @@ This repository serves as a professional simulation of an enterprise cloud migra
 
 <!-- test trigger -->
 
+### CI/CD Pipeline Success
+*Verification of the automated GitHub Actions workflow execution.*
+![GitHub Actions Success](github-actions-success.png)
+
 ### Communication Log
 *Simulated status update posted to the team's Slack channel.*
 ![Team Communication](wcd-bank-team-communication.png)
