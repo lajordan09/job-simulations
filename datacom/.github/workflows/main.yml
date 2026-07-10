@@ -3,11 +3,18 @@ name: WCD Bank CI Pipeline
 on:
   push:
     branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Run Migration Script
-        run: echo "Initiating WCD Bank cloud migration simulation..."
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Run Migration Simulation
+        run: |
+          echo "Initiating WCD Bank cloud migration simulation..."
+          echo "Task: Cloud Application Registration and CI/CD Pipeline"
+          echo "Status: Workflow Triggered Successfully"
