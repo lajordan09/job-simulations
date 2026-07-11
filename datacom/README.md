@@ -43,9 +43,18 @@ This repository serves as a professional simulation of an enterprise cloud migra
 ![Asana Progress](asana-task-completion.png)
 
 ---
+## Business Value Assessment
+
+**Q: How does the automation implemented in this project contribute to the operational goals of WCD Bank?**
+
+**A:** This project directly supports WCD Bank's strategic migration to the cloud by addressing three core operational pillars:
+1.  **Increased Velocity:** Automating application registration and deployment via CI/CD pipelines significantly reduces manual configuration time, enabling faster project implementation during the migration phase.
+2.  **Operational Consistency:** By utilizing standardized GitHub Actions workflows, the infrastructure team ensures that every deployment is tested and validated identically, minimizing configuration drift and human error.
+3.  **Enhanced Security Posture:** The project emphasizes secure environment variable management and IAM role configuration, ensuring that WCD Bank adheres to the Principle of Least Privilege (PoLP) while scaling its cloud infrastructure.
+
+---
 
 ## Author
 **LaQuita Jordan**  
-Data Analytics Graduate Student  
-*Focus: Systems Administration, Cloud Infrastructure & AI Engineering*  
-*Developed as part of the DATACOM Job Simulation.*
+Data Analytics Graduate Student    
+*Developed as part of the Forage DATACOM Job Simulation.*
