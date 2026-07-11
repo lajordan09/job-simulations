@@ -35,8 +35,8 @@ This repository serves as a professional simulation of an enterprise cloud migra
 ![GitHub Actions Success](github-actions-success.png)
 
 ### Communication Log
-*Simulated status update posted to the team's Slack channel.*
-
+*Simulated status update added to task comments via Asana.*
+![Team Communication](wcd-bank-team-communication.png)
 
 ### Task Management
 *Workflow lifecycle tracked using Asana Kanban methodology.*
